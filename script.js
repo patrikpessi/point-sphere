@@ -1,3 +1,5 @@
+const NUM_OF_POINTS = 800;
+
 class Point {
     constructor(x, y, z, r) {
         this.pos = createVector(x, y, z);
@@ -51,13 +53,13 @@ function setup() {
     parent = document.getElementById("parent");
     canvas = createCanvas(parent.clientWidth, parent.clientHeight, WEBGL);
     canvas.parent(parent);
-    createPointCloud(min(width, height) / 4, 1000);
+    createPointCloud(min(width, height) / 4, NUM_OF_POINTS);
 }
 
 function windowResized() {
     parent = document.getElementById("parent");
     resizeCanvas(parent.clientWidth, parent.clientHeight);
-    createPointCloud(min(width, height) / 4, 1000);
+    createPointCloud(min(width, height) / 4, NUM_OF_POINTS);
 }
 
 function draw() {
